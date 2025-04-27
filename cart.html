@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/1a32fd64af.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image-icon" href="favicon.ico">
+    <title>Document</title>
+    <style>
+        main {
+          padding: 2rem;
+        }
+    
+        .cart-container {
+
+            margin: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            justify-items: center;
+          }
+    
+        .cart-item {
+          display: flex;
+          gap: 1rem;
+          background-color: #030303;
+          border-radius: 12px;
+          padding: 1rem;
+          align-items: center;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+    
+        .cart-item img {
+          width: 100px;
+          height: auto;
+          border-radius: 10px;
+        }
+    
+        .item-details {
+          flex: 1;
+        }
+    
+        .item-details h3 {
+          margin: 0 0 0.3rem;
+        }
+    
+        .remove-item {
+          background-color: #e74c3c;
+          color: white;
+          padding: 0.5rem 1rem;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          margin-top: 0.5rem;
+          transition: background 0.3s ease;
+        }
+    
+        .remove-item:hover {
+          background-color: #c0392b;
+        }
+    
+        .cart-summary {
+          margin-top: 2rem;
+          text-align: right;
+        }
+    
+        .checkout-btn {
+          background-color: #7ed6a8;
+          color: #000;
+          padding: 0.75rem 2rem;
+          border: none;
+          border-radius: 10px;
+          font-weight: bold;
+          cursor: pointer;
+        }
+    
+        .checkout-btn:hover {
+          background-color: #62c097;
+        }
+      </style>
+</head>
+<body>
+    <nav id="navbar">
+        <a href="index.html">
+            <h1 class="logo">
+                <span class="primary-text">
+                    <i class="fas fa-shoe-prints" style="font-size: 24px;"></i>G
+                </span>sneaker
+            </h1>
+        </a>
+        <form id="search-form">
+            <input type="text" placeholder="Хайх..." />
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+
+        <li>
+          <a href="cart.html">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">2</span>
+          </a>
+        </li>
+
+        <ul class="nav-menu">
+            <li class="dropdown">
+                <a href="#">Brands <i class="fas fa-angle-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li class="sub-dropdown">
+                        <a href="#">NIKE <i class="fas fa-angle-right"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="item-list.html">Дотор</a></li>
+                            <li><a href="item-list.html">Гадаа</a></li>
+                            <li><a href="item-list.html">Өдөр тутам</a></li>
+                            <li><a href="item-list.html">Сагс</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-dropdown">
+                        <a href="#">ADIDAS <i class="fas fa-angle-right"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="item-list.html">Дотор</a></li>
+                            <li><a href="item-list.html">Гадаа</a></li>
+                            <li><a href="item-list.html">Өдөр тутам</a></li>
+                            <li><a href="item-list.html">Сагс</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-dropdown">
+                        <a href="#">ANTA <i class="fas fa-angle-right"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="item-list.html">Дотор</a></li>
+                            <li><a href="item-list.html">Гадаа</a></li>
+                            <li><a href="item-list.html">Өдөр тутам</a></li>
+                            <li><a href="item-list.html">Сагс</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-dropdown">
+                        <a href="#">LI-NING <i class="fas fa-angle-right"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="item-list.html">Дотор</a></li>
+                            <li><a href="item-list.html">Гадаа</a></li>
+                            <li><a href="item-list.html">Өдөр тутам</a></li>
+                            <li><a href="item-list.html">Сагс</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-dropdown">
+                        <a href="#">CONVERSE <i class="fas fa-angle-right"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="item-list.html">Дотор</a></li>
+                            <li><a href="item-list.html">Гадаа</a></li>
+                            <li><a href="item-list.html">Өдөр тутам</a></li>
+                            <li><a href="item-list.html">Сагс</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">About</a></li>
+            <li><a href="login.html">Нэвтрэх</a></li>
+        </ul>        
+    </nav>
+
+    <main>
+        <h2>Таны сагсалсан бараа</h2>
+        <div class="cart-container">
+          <div class="cart-item">
+            <img src="img/nike-air-max.jpg" alt="Nike Air Max" />
+            <div class="item-details">
+              <h3>Nike Air Max</h3>
+              <p>₮250,000</p>
+              <p>Хэмжээ: 41</p>
+              <button class="remove-item">Устгах</button>
+            </div>
+          </div>
+    
+          <div class="cart-item">
+            <img src="img/adidas ultra-boost.jpg" alt="Adidas Ultraboost" />
+            <div class="item-details">
+              <h3>Adidas Ultraboost</h3>
+              <p>₮270,000</p>
+              <p>Хэмжээ: 42</p>
+              <button class="remove-item">Устгах</button>
+            </div>
+          </div>
+          
+          <div class="cart-item">
+            <img src="img/adidas ultra-boost.jpg" alt="Adidas Ultraboost" />
+            <div class="item-details">
+              <h3>Adidas Ultraboost</h3>
+              <p>₮270,000</p>
+              <p>Хэмжээ: 42</p>
+              <button class="remove-item">Устгах</button>
+            </div>
+          </div>
+    
+          <div class="cart-summary">
+            <h3>Нийт дүн: ₮520,000</h3>
+            <button class="checkout-btn">Төлбөр төлөх</button>
+          </div>
+        </div>
+      </main>
+</body>
+
