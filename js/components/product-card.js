@@ -8,7 +8,12 @@ export default class ProductCard extends HTMLElement {
     connectedCallback() {
       this.render();
     }
-  
+
+    attributeChangedCallback(name, oldValue, newValue){
+      if (oldValue === newValue) return;
+      if (name === 'name') this.name = newValue;
+    }
+
     render() {
       this.shadowRoot.innerHTML = `
         <link rel="stylesheet" href="css/style.css">

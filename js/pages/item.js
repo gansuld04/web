@@ -11,6 +11,11 @@ export default class ItemPage extends HTMLElement {
         this.render();
     }
 
+    attributeChangedCallback(name, oldValue, newValue){
+        if (oldValue === newValue) return;
+        if (name === 'name') this.name = newValue;
+    }
+
     async fetchData() {
         const res = await fetch("../../data/sneaker.json")
         const pros = await res.json();

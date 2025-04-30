@@ -20,6 +20,7 @@ export default class HomePage extends HTMLElement {
     render() {
       let recProds = ""
       let newProds = ""
+      let mostProds = ""
 
 
       for(let prod of this.prod) {
@@ -27,6 +28,8 @@ export default class HomePage extends HTMLElement {
           recProds += `<product-card id="${prod.id}" name="${prod.name}" price="${prod.price}" img="${prod.image}"></product-card>`
         else if (prod.type == "new")
           newProds += `<product-card id="${prod.id}" name="${prod.name}" price="${prod.price}" img="${prod.image}"></product-card>`
+        else if (prod.type == "mostsold")
+          mostProds += `<product-card id="${prod.id}" name="${prod.name}" price="${prod.price}" img="${prod.image}"></product-card>`
       }
       this.shadowRoot.innerHTML = `
     <link rel="stylesheet" href="css/style.css">
@@ -59,41 +62,7 @@ export default class HomePage extends HTMLElement {
         <section class="product-section">
             <h2>Их зарагдсан бүтээгдэхүүн</h2>
             <div class="product-grid">
-              <div class="product-card">
-                <a href="item.html">
-                    <img src="img/nike-air-max.jpg" alt="Nike Air Max">
-                    <h3>Nike Air Max</h3>
-                    <p>₮250,000</p>
-                </a>
-              </div>
-              <div class="product-card">
-                <a href="item.html">
-                    <img src="img/adidas ultra-boost.jpg" alt="Adidas UltraBoost">
-                    <h3>Adidas UltraBoost</h3>
-                    <p>₮270,000</p>
-                </a>
-              </div>
-              <div class="product-card">
-                <a href="item.html">
-                    <img src="img/converse-all-star.jpg" alt="Converse All Star">
-                    <h3>Converse All Star</h3>
-                    <p>₮190,000</p>
-                </a>
-              </div>
-              <div class="product-card">
-                <a href="">
-                    <img src="img/lining-shadow.jpg" alt="Li-Ning Shadow">
-                    <h3>Li-Ning Shadow</h3>
-                    <p>₮230,000</p>
-                </a>
-              </div>
-              <div class="product-card">
-                <a href="item.html">              
-                    <img src="img/anta-kt8.jpeg" alt="ANTA KT8">
-                    <h3>ANTA KT8</h3>
-                    <p>₮260,000</p>
-                </a>
-              </div>
+              ${mostProds}
             </div>
           </section>
     </main>

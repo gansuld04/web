@@ -59,6 +59,7 @@ export class Router {
     handleRouterNavigate(event) {
       if (event.detail && event.detail.path) {
         this.navigate(event.detail.path);
+        console.log("hello from router");
       }
     }
     
@@ -104,11 +105,14 @@ export class Router {
       // Find matching route
       let matchedRoute = null;
       let routeParams = {};
+
+      console.log(this.routes);
       
       for (const route of this.routes) {
         if (typeof route.path === 'string') {
           if (route.path === path) {
             matchedRoute = route;
+            console.log(matchedRoute)
             break;
           }
         } else if (route.path instanceof RegExp) {
